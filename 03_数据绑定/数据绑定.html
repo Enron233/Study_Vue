@@ -10,7 +10,11 @@
 <body>
     <div id="demo">
         <h1>{{text.toUpperCase()}}</h1>
-        单向数据绑定:<input type="text" v-bind:value="name">
+        单向数据绑定:<input type="text" v-bind:value="name"><br>
+        双向数据绑定:<input type="text" v-model:value="name">
+        <hr>
+        输入一个链接:<input type="text" v-model:value="ceshi.url">
+        <a v-bind:href="ceshi.url" target="_blank">点我跳转</a>
     </div>
     <script>
         Vue.config.productionTip = false;
@@ -18,7 +22,10 @@
             el: "#demo",
             data:{
                 text: 'Success',
-                name: 'xiaoan'
+                name: 'xiaoan',
+                ceshi:{
+                    url: 'http://www.baidu.com'
+                }
             }
         })
     </script>
